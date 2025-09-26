@@ -57,11 +57,11 @@
    
    
    # MUTABILIDADE(MAIUSCULO, MINUSCULO)
-linguagens= ["Python", "Java", "JavaScript", "C", "C#", "Swift", "Go", "Kotlin"]
+# linguagens= ["Python", "Java", "JavaScript", "C", "C#", "Swift", "Go", "Kotlin"]
 
-print("antes do listcomp", linguagens)
-linguagens = [item.lower() for item in linguagens]
-print("\ndepois do listcomp",linguagens)   
+# print("antes do listcomp", linguagens)
+# linguagens = [item.lower() for item in linguagens]
+# print("\ndepois do listcomp",linguagens)   
    
    
    
@@ -78,3 +78,66 @@ print("\ndepois do listcomp",linguagens)
 # Índice 4 → valor o
 # Índice 5 → valor u
 
+# Treinando classes python
+
+# class Animal:
+   
+#    def __init__(self, nome):
+#       self.nome = nome
+      
+#    def fazer_barulho(self):
+#       pass
+   
+#     #  herança de animal para cachorro
+# class Cachorro(Animal):
+#       def fazer_barulho(self):
+#          return "latir"
+#     # herança de animal para cachorro
+# class Gato(Animal):
+#       def fazer_barulho(self):
+#          return "miar"
+      
+#     # Criando objetos das classes-filhas
+# rex = Cachorro("Rex")  
+
+# whiskers = Gato("Whiskers")
+
+#     # Chamando o método fazer_barulho em objetos
+# print(f"{rex} faz: {rex.fazer_barulho()}")  
+# # saida: "rex fazer: Latir"
+
+# print(f"{whiskers} faz: {whiskers.fazer_barulho()}")
+# # saida: "whikers faz miar"
+
+
+# SEGUNDO EXEMPLO HERANÇA CLASSES
+
+class Veiculo:
+   def __init__(self, marca, modelo, ano):
+      self.marca = marca
+      self.modelo = modelo
+      self.ano = ano
+      self.velocidade = 0
+      
+   def acelerar(self, incremento):
+         self.velocidade += incremento
+         
+   def frear(self, decremento):
+         self.velocidade -= decremento
+         
+   def status(self):
+      return f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Velocidade: {self.velocidade}"    
+   
+class Carro(Veiculo):
+      def __init__(self, marca, modelo, ano, potencia):
+         super().__init__(marca, modelo, ano)
+         self.potencia = potencia
+         
+      def acelerar(self, incremento):
+         #  return super().acelerar(incremento)
+         # CARROS PODEM ACELERAR MAIS RAPIDO
+         self.velocidade += incremento + self.potencia
+         
+         
+      
+      
