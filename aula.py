@@ -143,59 +143,112 @@
 
 # SEGUNDO EXEMPLO HERANÇA CLASSES
 
-class Veiculo:
-    def __init__(self, marca, modelo, ano):
-        self.marca = marca
-        self.modelo = modelo
-        self.ano = ano
-        self.velocidade = 0
+# class Veiculo:
+#     def __init__(self, marca, modelo, ano):
+#         self.marca = marca
+#         self.modelo = modelo
+#         self.ano = ano
+#         self.velocidade = 0
 
-    def acelerar(self, incremento):
-        self.velocidade += incremento
+#     def acelerar(self, incremento):
+#         self.velocidade += incremento
 
-    def frear(self, decremento):
-        self.velocidade -= decremento
+#     def frear(self, decremento):
+#         self.velocidade -= decremento
 
-    def status(self):
-     return f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}"
-
-
-class Carro(Veiculo):
-    def __init__(self, marca, modelo, ano, potencia):
-        super().__init__(marca, modelo, ano)
-        self.potencia = potencia
-
-    def acelerar(self, incremento):
-        #  return super().acelerar(incremento)
-        # CARROS PODEM ACELERAR MAIS RAPIDO
-        self.velocidade += incremento + self.potencia
+#     def status(self):
+#      return f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}"
 
 
-class Bicicleta(Veiculo):
-    def __init__(self, marca, modelo, ano, tipo):
-        super().__init__(marca, modelo, ano)
-        self.tipo = tipo
+# class Carro(Veiculo):
+#     def __init__(self, marca, modelo, ano, potencia):
+#         super().__init__(marca, modelo, ano)
+#         self.potencia = potencia
 
-    def status(self):
+#     def acelerar(self, incremento):
+#         #  return super().acelerar(incremento)
+#         # CARROS PODEM ACELERAR MAIS RAPIDO
+#         self.velocidade += incremento + self.potencia
 
-        return f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Tipo: {self.tipo}, Velocidade: {self.velocidade} km/h"
+
+# class Bicicleta(Veiculo):
+#     def __init__(self, marca, modelo, ano, tipo):
+#         super().__init__(marca, modelo, ano)
+#         self.tipo = tipo
+
+#     def status(self):
+
+#         return f"Marca: {self.marca}, Modelo: {self.modelo}, Ano: {self.ano}, Tipo: {self.tipo}, Velocidade: {self.velocidade} km/h"
 
 
-carro1 = Carro("Toyota", "Corolla", 2022, 150)
+# carro1 = Carro("Toyota", "Corolla", 2022, 150)
 
-# criando objetos o segundo é bicicleta
-bicicleta1 = Bicicleta("Trek", "Mountain Bike", 2021, "MTB")
+# # criando objetos o segundo é bicicleta
+# bicicleta1 = Bicicleta("Trek", "Mountain Bike", 2021, "MTB")
 
-#   acelerando e verificando o status
-carro1.acelerar(50)
+# #   acelerando e verificando o status
+# carro1.acelerar(50)
 
-bicicleta1.acelerar(20)
+# bicicleta1.acelerar(20)
 
-# exibindo o status dos veiculos
-# status do carro
-print("status do carro.")
-print(carro1.status())
+# # exibindo o status dos veiculos
+# # status do carro
+# print("status do carro.")
+# print(carro1.status())
 
-# status da bicicleta
-print("\nStatus da bicicleta")
-print(bicicleta1.status())
+# # status da bicicleta
+# print("\nStatus da bicicleta")
+# print(bicicleta1.status())
+
+import matplotlib.pyplot as ptl
+
+# classe para apresentar livro
+
+class Livro:
+    def __init__(self, titulo, autor, ano_publicacao):
+        self.titulo = titulo
+        self.autor = autor
+        self.ano_publicacao = ano_publicacao
+    
+    def __str__(self):
+        return f"{self.titulo} por {self.autor}, Publicado em {self.ano_publicacao}"
+
+
+# criar uma lista de livros
+biblioteca = []
+
+# lista para armazenar anos de publicacao
+anos = []
+
+# Função para adicionar livros para biblioteca
+def adicionar_livro(titulo, autor, ano_publicacao):
+        novo_livro = Livro(titulo, autor, ano_publicacao)
+        biblioteca.append(novo_livro)
+        anos.append(ano_publicacao) 
+        # adiciona o ano a lista de anos
+        print(f"O livro '{titulo}' foi adicionado a biblioteca")
+
+
+def listar_livros():
+    print("Livros na biblioteca")
+    for livro in biblioteca:
+        print(livro)
+
+
+# adicionar alguns livros a biblioteca
+adicionar_livro("Dom quixote", "miguel servantes", 1605)
+adicionar_livro("orgulho e preconceito", "jane austen", 1813)
+adicionar_livro("1984", "george orwell", 1949)
+adicionar_livro("cem anos de solidão", "gabriel garcia marquez", 1967)
+adicionar_livro("apanhador no campo de centeio", "J.D Salinger", 1951)
+
+
+# Listar todos os livros
+# listar_livros()
+
+
+
+
+
+
+
